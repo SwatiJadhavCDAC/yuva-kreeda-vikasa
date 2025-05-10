@@ -18,7 +18,7 @@ const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: 'cdac',  // Set your password here
-  database: 'yuva_keeda_vikasa', // The database you created
+  database: 'yuva_kreeda_vikasa', // The database you created
 });
 
 // Connect to MySQL
