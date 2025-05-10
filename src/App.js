@@ -79,7 +79,7 @@ function App() {
       <div>
         {/* Background Music */}
         <audio ref={audioRef} id="background-music" loop>
-          <source src="/music/Olympic_Musics.mp3" type="audio/mp3" />
+          <source src="/music/Olympic_Music.mp3" type="audio/mp3" />
           Your browser does not support the audio element.
         </audio>
 
@@ -89,7 +89,7 @@ function App() {
             <div className="flex items-center">
               {/* Logo Section */}
               <img src="/images/logo.png" alt="Logo" className="h-10 w-10 object-contain" /> {/* Added Logo */}
-              <h1 className="text-2xl font-semibold ml-2">YuvaKeedaVikas</h1> {/* Added Margin Left */}
+              <h1 className="text-2xl font-semibold ml-2">YuvaKreedaVikas</h1> {/* Added Margin Left */}
             </div>
             <div className="flex space-x-6">
               <Link to="/book-facility" className="text-white hover:text-blue-400">Booking</Link>
