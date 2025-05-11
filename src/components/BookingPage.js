@@ -22,32 +22,52 @@ function BookingPage() {
   // Handle form submission to send data to backend
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const response = await fetch('http://localhost:5000/book-facility', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    });
-
-    const result = await response.json();
-    if (response.ok) {
-      alert('Booking Successful!');
-      // Reset the form after successful booking
-      setFormData({
-        sport: 'Cricket',
-        location: '',
-        facility: '',
-        booking_date: '',
-        start_time: '',
-        end_time: '',
-        reason: 'Training',
+  
+    // Get email from localStorage
+    const user = JSON.parse(localStorage.getItem("user"));
+    const email = user?.email;
+  
+    if (!email) {
+      alert("User not signed in. Please sign in to book.");
+      return;
+    }
+  
+    // Merge email with form data
+    const dataToSend = {
+      ...formData,
+      email,
+    };
+  
+    try {
+      const response = await fetch('http://localhost:5000/book-facility', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(dataToSend),
       });
-    } else {
-      alert('Error booking: ' + result.message);
+  
+      const result = await response.json();
+      if (response.ok) {
+        alert('Booking Successful!');
+        setFormData({
+          sport: 'Cricket',
+          location: '',
+          facility: '',
+          booking_date: '',
+          start_time: '',
+          end_time: '',
+          reason: 'Training',
+        });
+      } else {
+        alert('Error booking: ' + result.message);
+      }
+    } catch (error) {
+      console.error("Booking failed:", error);
+      alert("Something went wrong while booking.");
     }
   };
+  
 
   return (
     <div

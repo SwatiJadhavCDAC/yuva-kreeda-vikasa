@@ -15,15 +15,27 @@ function ContactUs() {
     });
   };
 
-  // Handle form submission (for now, just display a success message)
-  const handleSubmit = (e) => {
+  // Handle form submission (send to backend)
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert('Your message has been successfully sent!'); // Simulate form submission
-    setFormData({
-      name: '',
-      email: '',
-      message: '',
+
+    const response = await fetch('http://localhost:5000/contact-us', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
     });
+
+    const result = await response.json();
+    alert(result.message); // Display success or error message
+    if (response.ok) {
+      setFormData({
+        name: '',
+        email: '',
+        message: '',
+      });
+    }
   };
 
   return (

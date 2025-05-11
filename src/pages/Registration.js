@@ -11,8 +11,10 @@ function Registration() {
     mobile: '',
     address: '',
     emergency_contact: '',
+    password: '', // New password field
   });
 
+  // Handle form input changes
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -20,8 +22,10 @@ function Registration() {
     });
   };
 
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     const response = await fetch('http://localhost:5000/register-athlete', {
       method: 'POST',
       headers: {
@@ -31,10 +35,20 @@ function Registration() {
     });
 
     const result = await response.json();
+    alert(result.message); // Display success or error message
     if (response.ok) {
-      alert('Registration Successful!');
-    } else {
-      alert('Error registering athlete: ' + result.message);
+      setFormData({
+        first_name: '',
+        last_name: '',
+        email: '',
+        age: '',
+        birthdate: '',
+        gender: 'Male',
+        mobile: '',
+        address: '',
+        emergency_contact: '',
+        password: '', // Reset password field after registration
+      });
     }
   };
 
@@ -88,6 +102,19 @@ function Registration() {
               type="email"
               name="email"
               value={formData.email}
+              onChange={handleChange}
+              required
+              className="w-full p-3 border border-gray-300 rounded-md shadow-sm"
+            />
+          </div>
+
+          {/* Password Field */}
+          <div className="mb-4">
+            <label className="block text-sm font-semibold text-gray-700">Password</label>
+            <input
+              type="password"
+              name="password"
+              value={formData.password}
               onChange={handleChange}
               required
               className="w-full p-3 border border-gray-300 rounded-md shadow-sm"

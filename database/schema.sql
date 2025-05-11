@@ -13,3 +13,26 @@ CREATE TABLE players (
     emergency_contact VARCHAR(15),
     registration_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+ALTER TABLE players ADD COLUMN password VARCHAR(255) NOT NULL;
+
+CREATE TABLE bookings (
+  booking_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  email VARCHAR(255) NOT NULL,
+  sport VARCHAR(50) NOT NULL,
+  location VARCHAR(100) NOT NULL,
+  facility VARCHAR(100) NOT NULL,
+  booking_date DATE NOT NULL,
+  start_time TIME NOT NULL,
+  end_time TIME NOT NULL,
+  reason VARCHAR(255),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE contact_us (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  message TEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
