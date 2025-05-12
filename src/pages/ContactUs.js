@@ -111,15 +111,15 @@ function ContactUs() {
       {/* Right Side - Our Location & Meet Our Team */}
       <div className="w-full md:w-1/2 text-white mt-12">
         {/* Our Location */}
-        <div className="mt-12 mb-8">
+        <div className="mt-32 mb-8">
           <h4 className="text-6xl font-light text-center mb-8">Our Location</h4>
           <div className="flex justify-center items-center flex-wrap gap-4">
             <div className="w-full md:w-1/2 p-4">
               <p className="text-3xl font-light mb-8">Headquarters India</p>
               <p className="text-xl mb-3">YuvaKeedaVikas</p>
-              <p className="text-xl">123, ABC Nagar, 2nd Floor</p>
-              <p className="text-xl">Delhi, 110001, India</p>
-              <p className="text-xl">tel: +91 987 654 3210</p>
+              <p className="text-xl">Raintree Marg, near Bharati Vidyapeeth</p>
+              <p className="text-xl">Sector 7, CBD Belapur,</p>
+              <p className="text-xl">Navi Mumbai, Maharashtra 400614</p>
               <p className="text-xl">fax: +91 987 654 3211</p>
               <p className="text-xl">
                 email: <a href="mailto:info@yuva-keeda.com" className="text-white-600 hover:underline">info@yuva-keeda.com</a>
@@ -132,41 +132,49 @@ function ContactUs() {
         <div className="w-full text-center mt-12">
           <h4 className="text-4xl font-light text-white mb-8">Meet Our Team</h4>
           <div className="flex justify-center items-center gap-6">
-            {/* Team Member 1 */}
-            <div className="relative group w-36 h-36">
-              <img
-                src="/images/empolyee_1.png" // Replace with actual team photo
-                alt="Team Member 1"
-                className="w-full h-full object-cover rounded-full"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex justify-center items-center text-white font-semibold text-lg">
-                <span>Role: CEO</span>
-              </div>
-            </div>
+          <div className="flex flex-col items-center">
+      <div className="relative group w-36 h-36">
+        <img
+          src="/images/Swati.png"
+          alt="Swati"
+          className="w-full h-full object-cover rounded-full"
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex justify-center items-center text-white font-semibold text-lg">
+          <span>Role: Admin</span>
+        </div>
+      </div>
+      <p className="mt-2 text-white text-2xl font-medium">Swati</p>
+    </div>
 
-            {/* Team Member 2 */}
-            <div className="relative group w-36 h-36">
-              <img
-                src="/images/employee_2.png" // Replace with actual team photo
-                alt="Team Member 2"
-                className="w-full h-full object-cover rounded-full"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex justify-center items-center text-white font-semibold text-lg">
-                <span>Role: CTO</span>
-              </div>
-            </div>
+    {/* Team Member 2 */}
+    <div className="flex flex-col items-center">
+      <div className="relative group w-36 h-36">
+        <img
+          src="/images/Vishal.png"
+          alt="Vishal"
+          className="w-full h-full object-cover rounded-full"
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex justify-center items-center text-white font-semibold text-lg">
+          <span>Role: Admin</span>
+        </div>
+      </div>
+      <p className="mt-2 text-white text-2xl font-medium">Vishal</p>
+    </div>
 
-            {/* Team Member 3 */}
-            <div className="relative group w-36 h-36">
-              <img
-                src="/images/employee_3.png" // Replace with actual team photo
-                alt="Team Member 3"
-                className="w-full h-full object-cover rounded-full"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex justify-center items-center text-white font-semibold text-lg">
-                <span>Role: COO</span>
-              </div>
-            </div>
+    {/* Team Member 3 */}
+    <div className="flex flex-col items-center">
+      <div className="relative group w-36 h-36">
+        <img
+          src="/images/Umesh.png"
+          alt="Umesh"
+          className="w-full h-full object-cover rounded-full"
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex justify-center items-center text-white font-semibold text-lg">
+          <span>Role: Admin</span>
+        </div>
+      </div>
+      <p className="mt-2 text-white text-2xl font-medium">Umesh</p>
+    </div>
           </div>
         </div>
       </div>

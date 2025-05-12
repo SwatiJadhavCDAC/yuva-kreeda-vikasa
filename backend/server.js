@@ -146,3 +146,34 @@ app.post('/signin', (req, res) => {
     }
   });
 });
+
+app.post('/my-bookings', (req, res) => {
+  const { email } = req.body;
+
+  const sql = `SELECT * FROM bookings WHERE email = ? ORDER BY booking_date DESC`;
+
+  db.query(sql, [email], (err, results) => {
+    if (err) {
+      console.error('Error fetching bookings:', err);
+      res.status(500).json({ message: 'Error fetching bookings' });
+    } else {
+      res.status(200).json({ bookings: results });
+    }
+  });
+});
+
+// ✅ POST /cancel-booking
+app.post('/cancel-booking', (req, res) => {
+  const { booking_id } = req.body;
+
+  const sql = `DELETE FROM bookings WHERE booking_id = ?`;
+
+  db.query(sql, [booking_id], (err, result) => {
+    if (err) {
+      console.error('Error cancelling booking:', err);
+      res.status(500).json({ message: 'Cancellation failed' });
+    } else {
+      res.status(200).json({ message: 'Booking cancelled successfully' });
+    }
+  });
+});

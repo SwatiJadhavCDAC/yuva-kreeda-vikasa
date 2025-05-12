@@ -181,7 +181,7 @@ function App() {
       </Routes>
 
       <footer className="bg-gray-800 text-white py-6 text-center">
-        <p>&copy; 2025 YuvaKeedaVikas. All Rights Reserved.</p>
+        <p>&copy; 2025 YuvaKreedaVikas. All Rights Reserved.</p>
       </footer>
     </Router>
   );
